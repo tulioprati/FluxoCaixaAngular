@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fork-app": {
+    "fluxo-caixa-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fork-app",
+            "outputPath": "dist/fluxo-caixa-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fork-app:build"
+            "browserTarget": "fluxo-caixa-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fork-app:build:production"
+              "browserTarget": "fluxo-caixa-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fork-app:build"
+            "browserTarget": "fluxo-caixa-app:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fork-app:serve"
+            "devServerTarget": "fluxo-caixa-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fork-app:serve:production"
+              "devServerTarget": "fluxo-caixa-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "fork-app"
+  "defaultProject": "fluxo-caixa-app"
 }

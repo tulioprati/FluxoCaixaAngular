@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PeopleListComponent } from './people-list.component';
 
-describe('forkListaComponent', () => {
+describe('fluxo-caixaListaComponent', () => {
   let component: PeopleListComponent;
   let fixture: ComponentFixture<PeopleListComponent>;
 
