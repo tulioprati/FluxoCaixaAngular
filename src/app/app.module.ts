@@ -16,6 +16,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {PeoplesService} from './services/people.service';
 import {PeopleRoutingModule} from './entities/people/people-routing.module';
 import {PeopleModule} from './entities/people/people.module';
+import {SpendingModule} from './entities/spending/spending.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {PeopleModule} from './entities/people/people.module';
     AppRoutingModule,
     TemplateModule,
     PeopleModule,
+    SpendingModule,
     NgbModule,
     NgxMaskModule.forRoot(),
     FormsModule,
@@ -39,6 +41,7 @@ import {PeopleModule} from './entities/people/people.module';
     MatNativeDateModule
   ],
   providers: [
+    PeoplesService,
     PeoplesService
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,88 @@
+<div class="modal-header title" style="background-color: #e7e7e7; max-height: 50px">
+  <h5 class="modal-title">Transação</h5>
+  <span (click)="cancel()" style="cursor: pointer">X</span>
+</div>
+<div class="container content-modal" *ngIf="!success">
+  <form #spendingForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="success == true">
+          Spending salvo/atualizado com sucesso
+        </div>
+        <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+          {{erro}}
+        </div>
+      </div>
+    </div>
+    <div class="input-group mb-3 col-md-12" *ngIf="spending.id">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Id</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="spending.id" name="valor"
+             [ngModelOptions]="{standalone: true}" disabled>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-3 col-md-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Valor</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="spending.amount" name="amount"
+               [ngModelOptions]="{standalone: true}">
+      </div>
+
+      <div class="input-group mb-3 col-md-6">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Data</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="spending.date" name="date"
+               [ngModelOptions]="{standalone: true}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group mb-3 col-md-6">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Tipo de transação</label>
+          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="spending.transactionType" name="transactionType">
+            <option value="SAIDA">Saida</option>
+            <option value="ENTRADA">Entrada</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="input-group mb-3 col-md-6">
+        <div class="input-group-prepend">
+          <label class="input-group-text">Tipo de transação</label>
+          <select class="form-select" [(ngModel)]="spending.statusPayment" name="statusPayment">
+            <option value="PAGO">Pago</option>
+            <option value="AGENDADO">Agendado</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group mb-3 col-md-12">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Descrição</span>
+        </div>
+        <textarea type="text" class="form-control" [(ngModel)]="spending.description" name="description"
+               [ngModelOptions]="{standalone: true}"></textarea>
+      </div>
+
+    </div>
+
+    <div class="row right">
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary" style="margin-left: 23px" *ngIf="!spending?.id">Salvar</button>
+        <button type="submit" class="btn btn-success" style="margin-left: 23px" *ngIf="spending?.id">Salvar</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+<div *ngIf="success" class="alert alert-success" role="alert">
+  A movimentação foi salva com sucesso!
+</div>
+

@@ -14,7 +14,11 @@
       <thead>
       <tr>
         <th>ID</th>
-        <th>Nome</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Tipo de transação</th>
+        <th>Status do pagamento</th>
+        <th>Descrição</th>
         <th>
           <button class="btn btn-primary" (click)="novoCadastro()">
             <i class="fa fa-plus"></i>&nbsp;Novo
@@ -23,15 +27,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let people of peoples">
-        <td>{{people.id}}</td>
-        <td>{{people.name}}</td>
+      <tr *ngFor="let spending of spendings">
+        <td>{{spending.id}}</td>
+        <td>{{spending.amount}}</td>
+        <td>{{spending.date}}</td>
+        <td>{{spending.transactionType}}</td>
+        <td>{{spending.statusPayment}}</td>
+        <td>{{spending.description}}</td>
         <td>
-          <button class="btn btn-warning" (click)="edit(people)">
+          <button class="btn btn-warning" (click)="edit(spending)">
             <i class="fa-solid fa-pen"></i>&nbsp;Editar
           </button>
           &nbsp;
-          <button class="btn btn-danger" (click)="preparaDelecao(people)"
+          <button class="btn btn-danger" (click)="preparaDelecao(spending)"
                   data-toggle="modal" data-target="#modalDelecao">
             <i class="fa fa-trash"></i>
           </button>
@@ -48,12 +56,12 @@
       <div class="modal-header">
         <h4>Confirmação</h4>
       </div>
-      <div class="modal-body" *ngIf="peopleSelecionado">
+      <div class="modal-body" *ngIf="spendingSelecionado">
 
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-success" (click)="deletarPeople()" data-dismiss="modal">Confirma</button>
+        <button class="btn btn-success" (click)="deletarSpending()" data-dismiss="modal">Confirma</button>
         <button class="btn btn-danger" data-dismiss="modal">Cancela</button>
       </div>
     </div>

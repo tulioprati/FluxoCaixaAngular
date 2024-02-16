@@ -1,0 +1,18 @@
+.header{
+  background-color: #dedede;
+}
+.content-modal{
+  padding: 1%;
+}
+
+.right-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px; /* ajuste as margens conforme necessário */
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
