@@ -52,16 +52,16 @@
         </div>
       </div>
 
-
       <div class="input-group mb-3 col-md-6">
         <div class="input-group-prepend">
-          <label class="input-group-text">Tipo de transação</label>
-          <select class="form-select" [(ngModel)]="spending.statusPayment" name="statusPayment">
-            <option value="PAGO">Pago</option>
-            <option value="AGENDADO">Agendado</option>
-          </select>
+          <label class="input-group-text text-size-6">Tipo de transação</label>
         </div>
+        <select class="form-select" [(ngModel)]="spending.statusPayment" name="statusPayment">
+          <option value="PAGO">Pago</option>
+          <option value="AGENDADO">Agendado</option>
+        </select>
       </div>
+
 
       <div class="input-group mb-3 col-md-12">
         <div class="input-group-prepend">
